@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Add Movement</h2>
+<form method="post">
+  <div class="mb-3">
+    <label class="form-label">Movement ID</label>
+    <input class="form-control" name="movement_id">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Product</label>
+    <select class="form-select" name="product_id">
+      {% for p in products %}
+      <option value="{{ p.product_id }}">{{ p.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">From Location (leave blank for new stock)</label>
+    <select class="form-select" name="from_location">
+      <option value="">--</option>
+      {% for l in locations %}
+      <option value="{{ l.location_id }}">{{ l.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">To Location (leave blank for removal)</label>
+    <select class="form-select" name="to_location">
+      <option value="">--</option>
+      {% for l in locations %}
+      <option value="{{ l.location_id }}">{{ l.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input class="form-control" name="qty" type="number" value="1">
+  </div>
+  <button class="btn btn-primary" type="submit">Add</button>
+  <a class="btn btn-secondary" href="/movements">Cancel</a>
+</form>
+{% endblock %}
