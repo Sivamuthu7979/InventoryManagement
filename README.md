@@ -165,8 +165,3 @@ All data is saved automatically in the SQLite database.
 **Sivamuthu**
 💻 [GitHub Profile](https://github.com/Sivamuthu7979)
 
-
-
-
-Would you like me to also add **GitHub badges** (Python, Flask, License, etc.) and a **centered title banner** for a more professional look on your repo front page?
-```
